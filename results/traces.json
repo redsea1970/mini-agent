@@ -1,0 +1,186 @@
+{
+  "no_reflexion": [
+    {
+      "task": "Посчитай 15% от 200 и запиши результат в файл.",
+      "steps": [
+        {
+          "thought": "Шаг 1: calculator",
+          "action": "calculator",
+          "params": {
+            "expression": "200 * 0.15"
+          },
+          "observation": "30.0"
+        },
+        {
+          "thought": "Шаг 2: write_file",
+          "action": "write_file",
+          "params": {
+            "path": "results/answer.txt",
+            "content": "RESULT_PLACEHOLDER"
+          },
+          "observation": "Записано в results/answer.txt"
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": true
+    },
+    {
+      "task": "Прочитай файл data/input.txt и посчитай количество слов.",
+      "steps": [
+        {
+          "thought": "Шаг 1: read_file",
+          "action": "read_file",
+          "params": {
+            "path": "data/input.txt"
+          },
+          "observation": "Это тестовый файл для проверки работы агента.\nОн содержит несколько предложений.\nАгент должен уметь читать этот файл и считать слова.\n"
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": true
+    },
+    {
+      "task": "Найди в интернете курс доллара.",
+      "steps": [
+        {
+          "thought": "Шаг 1: web_search",
+          "action": "web_search",
+          "params": {
+            "query": "курс доллара"
+          },
+          "observation": "[Заглушка] Результаты поиска по запросу: 'курс доллара'."
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": true
+    },
+    {
+      "task": "Посчитай 15% от 200.",
+      "steps": [
+        {
+          "thought": "Шаг 1: calculator",
+          "action": "calculator",
+          "params": {
+            "expression": "200 * 0.15"
+          },
+          "observation": "30.0"
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": true
+    },
+    {
+      "task": "Что такое квантовая физика?",
+      "steps": [],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": false
+    }
+  ],
+  "with_reflexion": [
+    {
+      "task": "Посчитай 15% от 200 и запиши результат в файл.",
+      "steps": [
+        {
+          "thought": "Шаг 1: calculator",
+          "action": "calculator",
+          "params": {
+            "expression": "200 * 0.15"
+          },
+          "observation": "30.0",
+          "reflection": {
+            "done": false,
+            "reason": "Результат не записан."
+          }
+        },
+        {
+          "thought": "Шаг 2: write_file",
+          "action": "write_file",
+          "params": {
+            "path": "results/answer.txt",
+            "content": "RESULT_PLACEHOLDER"
+          },
+          "observation": "Записано в results/answer.txt",
+          "reflection": {
+            "done": true,
+            "reason": "Результат вычислен и записан."
+          }
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": true
+    },
+    {
+      "task": "Прочитай файл data/input.txt и посчитай количество слов.",
+      "steps": [
+        {
+          "thought": "Шаг 1: read_file",
+          "action": "read_file",
+          "params": {
+            "path": "data/input.txt"
+          },
+          "observation": "Это тестовый файл для проверки работы агента.\nОн содержит несколько предложений.\nАгент должен уметь читать этот файл и считать слова.\n",
+          "reflection": {
+            "done": true,
+            "reason": "Файл прочитан."
+          }
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": true
+    },
+    {
+      "task": "Найди в интернете курс доллара.",
+      "steps": [
+        {
+          "thought": "Шаг 1: web_search",
+          "action": "web_search",
+          "params": {
+            "query": "курс доллара"
+          },
+          "observation": "[Заглушка] Результаты поиска по запросу: 'курс доллара'.",
+          "reflection": {
+            "done": true,
+            "reason": "Поиск выполнен."
+          }
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": true
+    },
+    {
+      "task": "Посчитай 15% от 200.",
+      "steps": [
+        {
+          "thought": "Шаг 1: calculator",
+          "action": "calculator",
+          "params": {
+            "expression": "200 * 0.15"
+          },
+          "observation": "30.0",
+          "reflection": {
+            "done": false,
+            "reason": "Результат не записан."
+          }
+        }
+      ],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 1,
+      "done": false
+    },
+    {
+      "task": "Что такое квантовая физика?",
+      "steps": [],
+      "invalid_tool_calls": 0,
+      "claimed_done_but_not": 0,
+      "done": false
+    }
+  ]
+}
