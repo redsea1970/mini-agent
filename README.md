@@ -52,3 +52,7 @@ flowchart LR
     F --> S[summarize_traces]
     S --> M[Метрики: success_rate, false_done, avg_steps]
 ```
+
+## Архитектура
+
+Подробная схема проекта: [ARCHITECTURE.md](ARCHITECTURE.md)
